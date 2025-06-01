@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recenze</title>
+  <a href="index.html" class="tlacitko-domu">💈 Domů</a>
+  <link rel="stylesheet" href="style.css">
+
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      color: #f0f0f0;
+      animation: fadePageIn 1s ease;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3rem;
+      color: #ff416c;
+      text-shadow: 0 0 10px #ff416c;
+      margin-top: 30px;
+    }
+
+    .ramecek {
+      border: 2px solid #ff416c;
+      padding: 20px;
+      margin: 30px auto;
+      width: 80%;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 65, 108, 0.5);
+      background-color: #1f1f1f;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+    }
+
+    button {
+      background: linear-gradient(45deg, #ff416c, #ff4b2b);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(45deg, #00c9ff, #92fe9d);
+      color: #000;
+      box-shadow: 0 0 10px #00c9ff;
+    }
+
+    .recenze-vystup {
+      margin-top: 20px;
+    }
+
+    .jedna-recenze {
+      background: #2a2a2a;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      box-shadow: 0 0 10px rgba(255, 65, 108, 0.2);
+    }
+
+    @keyframes fadePageIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Napiš svou recenzi</h1>
+
+  <div class="ramecek">
+    <form id="recenzeForm">
+      <label for="jmeno">Tvé jméno:</label>
+      <input type="text" id="jmeno" required />
+
+      <label for="zprava">Tvoje recenze:</label>
+      <textarea id="zprava" rows="4" required></textarea>
+
+      <button type="submit">Odeslat recenzi</button>
+    </form>
+
+    <div class="recenze-vystup" id="vystupRecenzi">
+      <!-- Sem se uloží recenze -->
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById("recenzeForm");
+    const vystup = document.getElementById("vystupRecenzi");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const jmeno = document.getElementById("jmeno").value.trim();
+      const zprava = document.getElementById("zprava").value.trim();
+
+      if (jmeno && zprava) {
+        const novaRecenze = document.createElement("div");
+        novaRecenze.className = "jedna-recenze";
+        novaRecenze.innerHTML = `<strong>${jmeno}</strong><p>${zprava}</p>`;
+        vystup.prepend(novaRecenze);
+
+        form.reset();
+      }
+    });
+  </script>
+
+</body>
+</html>

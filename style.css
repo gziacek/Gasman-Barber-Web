@@ -1,0 +1,199 @@
+/* Základní nastavení */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  color: #f0f0f0;
+  animation: fadePageIn 1s ease;
+}
+
+/* Hlavní nadpis */
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: #ff416c;
+  text-shadow: 0 0 10px #ff416c;
+  margin-top: 30px;
+}
+
+/* Podnadpisy */
+h2 {
+  color: #00c9ff;
+  margin-bottom: 15px;
+}
+
+/* Odsazení textu */
+p, li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Navigační menu */
+nav {
+  background: #111; /* tmavé pozadí */
+  display: flex;
+  justify-content: center; /* zarovnání na střed */
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(255, 65, 108, 0.3);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;       /* Vodorovné položky */
+  gap: 30px;           /* mezera mezi položkami */
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  color: white;
+  box-shadow: 0 0 10px #ff416c;
+}
+
+.tlacitko-domu {
+  background: linear-gradient(45deg, #00c9ff, #92fe9d);
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 20px;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 0 10px #00c9ff;
+}
+
+.tlacitko-domu:hover {
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  color: white;
+  box-shadow: 0 0 15px #ff416c;
+}
+
+
+
+
+/* Rámečky */
+.ramecek {
+  border: 2px solid #ff416c;
+  padding: 20px;
+  margin: 30px auto;
+  width: 80%;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255, 65, 108, 0.5);
+}
+
+/* Fotogalerie */
+.gallery img {
+  width: 100%;
+  max-width: 250px;
+  margin: 10px;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.gallery img:hover {
+  transform: scale(1.1);
+}
+
+/* Tlačítka (odkazy) */
+a.tlacitko {
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  margin: 10px;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+a.tlacitko:hover {
+  background: linear-gradient(45deg, #00c9ff, #92fe9d);
+  color: #000;
+  box-shadow: 0 0 10px #00c9ff;
+}
+
+/* Tabulka ceníku */
+table {
+  width: 80%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: #222;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+th, td {
+  border: 1px solid #444;
+  padding: 12px;
+  text-align: center;
+  color: #fff;
+}
+
+th {
+  background-color: #ff416c;
+}
+
+td {
+  background-color: #333;
+}
+
+/* Footer a sociální sítě */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #111;
+  margin-top: 40px;
+}
+
+.social-icons {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icons a {
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+.social-icons a.insta { background: #E1306C; }
+.social-icons a.tiktok { background: #000; color: #fff; }
+.social-icons a.fb { background: #1877F2; }
+
+.social-icons a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+
+/* Animace při načtení stránky */
+@keyframes fadePageIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  
+}
